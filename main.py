@@ -33,11 +33,18 @@ class User(ndb.Model):
 	user_library = ndb.StringProperty(repeated = True)
 
 class MainHandler(webapp2.RequestHandler):
+<<<<<<< HEAD
     def get(self):
         print ("Here")
 
     def post(self):
         print ("Here")
+=======
+	def get(self):
+		print ("Here")
+	def post(self):
+		print ("Here")
+>>>>>>> cca11dee6aca1e10c594d645636c6f32ffbfe398
 
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
