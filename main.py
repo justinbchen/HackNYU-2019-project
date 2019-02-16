@@ -1,7 +1,6 @@
 import webapp2
 import jinja2
 import os
-from books import *
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import logging
