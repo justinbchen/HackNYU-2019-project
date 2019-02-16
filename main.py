@@ -59,6 +59,11 @@ class UserInput(webapp2.RequestHandler):
 		# print "Class is functional"
 
 
+class FoodItem(ndb.Model):
+
+    Name = ndb.StringProperty();
+    Type = ndb.StringProperty();
+
 app = webapp2.WSGIApplication([
   ('/', HomePage),
   ('/login', MainHandler),
