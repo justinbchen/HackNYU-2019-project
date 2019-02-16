@@ -64,22 +64,52 @@ class HomePage(webapp2.RequestHandler):
             )
             food_type.put()
     def post(self):
-        content =  TEMPLATE.get_template('/templates/homepage.html')
-        self.response.write(content.render())
+        content = TEMPLATE.get_template("/templates/tableItem.html")
+        q = FoodType.query().fetch()
         self.response.write("""
-        <table style="width:70%">""")
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <link href="https://fonts.googleapis.com/css?family=Orbitron|Russo+One" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+                <link href="/css/main.css" rel="stylesheet">
 
+                <title>SustainEdibility</title>
+
+            </head>
+
+            <body>
+                <header class = "center">
+                    <h1>SustainEdibility</h1>
+                </header>
+                <main class = "center">
+                    <p>Welcome to SustainEdibility, a site where you can determine the environmental impact
+                    of your choice in food, leading to a better world and a healthier lifestyle. Below are
+                    two options. One allows you to add a new food item, which is a meal you've had or a recipe
+                    you have created, and through this we will be able to calculate your environmental impact.
+                    Beside that, there is the add new food type, which is the ingredients your items are composed
+                    of. For instance, a kind of meat or an herb or something like that. </p>
+                    <a href = "/newItem"><button type="submit" name="newItem">Add New Food Item</button></a>
+                    <a href = "/newType"><button type="submit" name="newType">Add New Food Type</button></a>
+                    <form class="" action="/" method="post">
+                        <button type="button" name="button">Clicl here to view types</button>
+                    </form>
+                </main>
+                <table style = "width =70%" class = "center">
+                
+        """)
         for item in q:
-            self.response.write("""
-            <tr>
-                <th>"""item.Name"""</th>
-                <th>"""item.Carbon""" g CO2 / Kg of Food </th>
-                <th>"""item.Water""" L H2O / Kg of FoodItem</th>
-            </tr>
-            """)
+            self.response.write(content.render(name = item.Name, carbon = item.Carbon, water = item.Water))
 
         self.response.write("""
-        </table>
+                </table>
+                <footer>
+
+                </footer>
+            </body>
+
+        </html>
         """)
 class User(ndb.Model):
     first_name = ndb.StringProperty()
