@@ -35,9 +35,7 @@ class User(ndb.Model):
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		print ("Here")
-
-
- 	def post(self):
+	def post(self):
 		print ("Here")
 
 class LoginHandler(webapp2.RequestHandler):
