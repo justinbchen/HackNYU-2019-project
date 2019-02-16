@@ -26,7 +26,7 @@ class User(ndb.Model):
 
   	first_name = ndb.StringProperty()
   	last_name = ndb.StringProperty()
-	username = ndb.StringProperty()
+    username = ndb.StringProperty()
 	email = ndb.StringProperty()
 	password = ndb.StringProperty()
 	confirm_password = ndb.StringProperty()
