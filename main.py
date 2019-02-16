@@ -20,49 +20,57 @@ class HomePage(webapp2.RequestHandler):
     def get(self):
         content =  TEMPLATE.get_template('/templates/homepage.html')
         self.response.write(content.render())
+        q = FoodType.query().fetch()
 
-        food_type = FoodType(
-            Name = "beef",
-            Meat = True,
-            Carbon = 13300,
-            Water = 15415
-        )
-        food_type.put()
-        food_type = FoodType(
-            Name = "pork",
-            Meat = True,
-            Carbon = 3250,
-            Water = 5988
-        )
-        food_type.put()
-        food_type = FoodType(
-            Name = "chicken",
-            Meat = True,
-            Carbon = 3500,
-            Water = 4325
-        )
-        food_type.put()
-        food_type = FoodType(
-            Name = "vegetables",
-            Meat = False,
-            Carbon = 2000,
-            Water = 322
-        )
-        food_type.put()
-        food_type = FoodType(
-            Name = "fruits",
-            Meat = False,
-            Carbon = 400,
-            Water = 962
-        )
-        food_type.put()
-        food_type = FoodType(
-            Name = "baked",
-            Meat = False,
-            Carbon = 700,
-            Water = 4482
-        )
-        food_type.put()
+        run = False
+
+        for item in q:
+            if item.name == "beef":
+                run = True
+                break
+        if run:
+            food_type = FoodType(
+                Name = "beef",
+                Meat = True,
+                Carbon = 13300,
+                Water = 15415
+            )
+            food_type.put()
+            food_type = FoodType(
+                Name = "pork",
+                Meat = True,
+                Carbon = 3250,
+                Water = 5988
+            )
+            food_type.put()
+            food_type = FoodType(
+                Name = "chicken",
+                Meat = True,
+                Carbon = 3500,
+                Water = 4325
+            )
+            food_type.put()
+            food_type = FoodType(
+                Name = "vegetables",
+                Meat = False,
+                Carbon = 2000,
+                Water = 322
+            )
+            food_type.put()
+            food_type = FoodType(
+                Name = "fruits",
+                Meat = False,
+                Carbon = 400,
+                Water = 962
+            )
+            food_type.put()
+            food_type = FoodType(
+                Name = "baked",
+                Meat = False,
+                Carbon = 700,
+                Water = 4482
+            )
+            food_type.put()
 
 class User(ndb.Model):
     first_name = ndb.StringProperty()
