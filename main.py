@@ -65,16 +65,12 @@ class FoodType(ndb.Model):
 	Carbon = nbd.FloatProperty() #footprint in g CO2 / kg food
 	Water = nbd.FloatProperty() #footprint in L water / kg food
 
-<<<<<<< HEAD
 class FoodItem(ndb.Model):
     Name = ndb.StringProperty() #name of food
     Ingredients = nbd.ListProperty(FoodType) #list of ingredients by food type
-=======
     Name = ndb.StringProperty();
     Type = ndb.StringProperty();
     grams = ndb.IntegerProperty();
-
->>>>>>> 2c6adf500683ed3c54e4716ead8ffda33d11fbc9
 
 app = webapp2.WSGIApplication([
   ('/', HomePage),
