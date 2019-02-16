@@ -1,7 +1,6 @@
 import webapp2
 import jinja2
 import os
-from books import *
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import logging
@@ -62,7 +61,7 @@ class UserInput(webapp2.RequestHandler):
 class FoodType(ndb.Model):
     Name = ndb.StringProperty() #name of food type
     Meat = ndb.BooleanProperty() #meat or non meat
-    Carbon = nbd.FloatProperty() #footprint in g CO2 / kg food
+    #Carbon = nbd.FloatProperty() #footprint in g CO2 / kg food
     Water = nbd.FloatProperty() #footprint in L water / kg food
 
 class FoodItem(ndb.Model):
