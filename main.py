@@ -20,13 +20,12 @@ TEMPLATE = jinja2.Environment(
 class HomePage(webapp2.RequestHandler):
 
 	def get(self):
-		print ("Here");
+		print ("Here")
 
 class User(ndb.Model):
-
-  	first_name = ndb.StringProperty()
-  	last_name = ndb.StringProperty()
-    username = ndb.StringProperty()
+	first_name = ndb.StringProperty()
+	last_name = ndb.StringProperty()
+	username = ndb.StringProperty()
 	email = ndb.StringProperty()
 	password = ndb.StringProperty()
 	confirm_password = ndb.StringProperty()
@@ -35,11 +34,11 @@ class User(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		print ("Here");
+		print ("Here")
 
 
  	def post(self):
-		print ("Here");
+		print ("Here")
 
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
@@ -47,11 +46,11 @@ class LoginHandler(webapp2.RequestHandler):
 		self.response.write(content.render())
 
 	def post(self):
-		print ("Here");
+		print ("Here")
 
 class LogoutHandler(webapp2.RequestHandler):
 	def get(self):
-		print ("Here");
+		print ("Here")
 
 
 
