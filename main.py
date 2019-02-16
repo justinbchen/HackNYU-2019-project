@@ -58,7 +58,7 @@ class HomePage(webapp2.RequestHandler):
         food_type.put()
         food_type = FoodType(
             Name = "baked",
-            Meat = false,
+            Meat = False,
             Carbon = 700,
             Water = 4482
         )
