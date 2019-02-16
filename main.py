@@ -18,9 +18,9 @@ TEMPLATE = jinja2.Environment(
 
 
 class HomePage(webapp2.RequestHandler):
-
-	def get(self):
-		print ("Here")
+    def get(self):
+        content =  TEMPLATE.get_template('/templates/homepage.html')
+        self.response.write(content.render())
 
 class User(ndb.Model):
 	first_name = ndb.StringProperty()
