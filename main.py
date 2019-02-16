@@ -63,7 +63,24 @@ class HomePage(webapp2.RequestHandler):
                 Water = 4482
             )
             food_type.put()
+    def post(self):
+        content =  TEMPLATE.get_template('/templates/homepage.html')
+        self.response.write(content.render())
+        self.response.write("""
+        <table style="width:70%">""")
 
+        for item in q:
+            self.response.write("""
+            <tr>
+                <th>"""item.Name"""</th>
+                <th>"""item.Carbon""" g CO2 / Kg of Food </th>
+                <th>"""item.Water""" L H2O / Kg of FoodItem</th>
+            </tr>
+            """)
+
+        self.response.write("""
+        </table>
+        """)
 class User(ndb.Model):
     first_name = ndb.StringProperty()
     last_name = ndb.StringProperty()
@@ -118,6 +135,8 @@ class NewTypeHandler(webapp2.RequestHandler):
                 put = False
         if put:
             food_type.put()
+
+        self.redirect('/')
 
 
 class FoodType(ndb.Model):
