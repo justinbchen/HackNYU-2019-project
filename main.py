@@ -28,6 +28,41 @@ class HomePage(webapp2.RequestHandler):
             Water = 15415
         )
         food_type.put()
+        food_type = FoodType(
+            Name = "pork",
+            Meat = True,
+            Carbon = 3250,
+            Water = 5988
+        )
+        food_type.put()
+        food_type = FoodType(
+            Name = "chicken",
+            Meat = True,
+            Carbon = 3500,
+            Water = 4325
+        )
+        food_type.put()
+        food_type = FoodType(
+            Name = "vegetables",
+            Meat = False,
+            Carbon = 2000,
+            Water = 322
+        )
+        food_type.put()
+        food_type = FoodType(
+            Name = "fruits",
+            Meat = False,
+            Carbon = 400,
+            Water = 962
+        )
+        food_type.put()
+        food_type = FoodType(
+            Name = "baked",
+            Meat = false,
+            Carbon = 700,
+            Water = 4482
+        )
+        food_type.put()
 
 class User(ndb.Model):
     first_name = ndb.StringProperty()
