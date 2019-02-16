@@ -20,7 +20,7 @@ TEMPLATE = jinja2.Environment(
 class HomePage(webapp2.RequestHandler):
 
 	def get(self):
-		print "Here";
+		print ("Here");
 
 class User(ndb.Model):
 
@@ -35,11 +35,11 @@ class User(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		print "everywhere";
+		print ("Here");
 
 
  	def post(self):
-		print "still here"
+		print ("Here");
 
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
@@ -47,11 +47,11 @@ class LoginHandler(webapp2.RequestHandler):
 		self.response.write(content.render())
 
 	def post(self):
-		print "here";
+		print ("Here");
 
 class LogoutHandler(webapp2.RequestHandler):
 	def get(self):
-		print "here"
+		print ("Here");
 
 
 
