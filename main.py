@@ -117,7 +117,7 @@ class NewTypeHandler(webapp2.RequestHandler):
     def post(self):
         meat = self.request.get('type')
         value = False
-        if meat is "True":
+        if meat is "Yes":
             value=True
 
         food_type = FoodType(
