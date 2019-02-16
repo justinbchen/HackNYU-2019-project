@@ -22,9 +22,9 @@ class HomePage(webapp2.RequestHandler):
         self.response.write(content.render())
 
         food_type = FoodType(
-            Name = "beef"
-            Meat = True
-            Carbon = 13300
+            Name = "beef",
+            Meat = True,
+            Carbon = 13300,
             Water = 15415
         )
 
