@@ -114,7 +114,29 @@ class NewItemHandler(webapp2.RequestHandler):
 
 class NewTypeHandler(webapp2.RequestHandler):
     def get(self):
-        print ("Getting new type");
+        content = TEMPLATE.get_template('/templates/newType.html')
+        self.response.write(content.render())
+    def get(post):
+        meat = self.request.get('type')
+        if meat is 'True'
+            meat = True
+        else
+            meat = False
+
+        food_type = FoodType(
+            Name = self.request.get('foodname'),
+            Meat = meat,
+            Carbon = self.request.get('carbon'),
+            Water = self.request.get('water')
+        )
+        q = FoodType.query().fetch()
+
+        put = True
+        for item in q:
+            if food_type.Name = q.Name:
+                put = False
+        if put:
+            food_type.put()
 
 
 class FoodType(ndb.Model):
