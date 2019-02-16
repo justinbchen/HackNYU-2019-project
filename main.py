@@ -21,6 +21,13 @@ class HomePage(webapp2.RequestHandler):
         content =  TEMPLATE.get_template('/templates/homepage.html')
         self.response.write(content.render())
 
+        food_type = FoodType(
+            Name = "beef"
+            Meat = True
+            Carbon = 13300
+            Water = 15415
+        )
+
 class User(ndb.Model):
     first_name = ndb.StringProperty()
     last_name = ndb.StringProperty()
