@@ -1,3 +1,21 @@
+body{
+    background-color: #52BE80;
+}
 .center {
     text-align: center;
+}
+
+header{
+    background-color: #33AF4B;
+    font-family: 'Abril Fatface', cursive;
+
+}
+
+main{
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+
 }
