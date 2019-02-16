@@ -109,6 +109,10 @@ class UserInput(webapp2.RequestHandler):
         self.response.write(content.render(title = "book variable"))
         # print "Class is functional"
 
+class NewItemHandler(webapp2.RequestHandler):
+    def get(self):
+        print ("Getting new item");
+
 
 class FoodType(ndb.Model):
     Name = ndb.StringProperty() #name of food type
@@ -124,5 +128,6 @@ app = webapp2.WSGIApplication([
   ('/', HomePage),
   ('/login', MainHandler),
   ('/logout', LogoutHandler),
-  ('/signIn', LoginHandler)
+  ('/signIn', LoginHandler),
+  ('/newItem', NewItemHandler)
 ], debug=True)
