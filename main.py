@@ -116,22 +116,21 @@ class NewTypeHandler(webapp2.RequestHandler):
         self.response.write(content.render())
     def get(post):
         meat = self.request.get('type')
-        if meat is 'True'
-            meat = True
-        else
-            meat = False
+        value = False
+        if meat is "True":
+            value=True
 
         food_type = FoodType(
             Name = self.request.get('foodname'),
-            Meat = meat,
+            Meat = value,
             Carbon = self.request.get('carbon'),
             Water = self.request.get('water')
         )
         q = FoodType.query().fetch()
-
+    #
         put = True
         for item in q:
-            if food_type.Name = q.Name:
+            if food_type.Name is item.Name:
                 put = False
         if put:
             food_type.put()
