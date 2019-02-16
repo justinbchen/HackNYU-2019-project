@@ -27,6 +27,7 @@ class HomePage(webapp2.RequestHandler):
             Carbon = 13300,
             Water = 15415
         )
+        food_type.put()
 
 class User(ndb.Model):
     first_name = ndb.StringProperty()
