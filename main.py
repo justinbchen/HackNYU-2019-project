@@ -29,42 +29,36 @@ class HomePage(webapp2.RequestHandler):
         if run:
             food_type = FoodType(
                 Name = "beef",
-                Meat = True,
                 Carbon = 13300,
                 Water = 15415
             )
             food_type.put()
             food_type = FoodType(
                 Name = "pork",
-                Meat = True,
                 Carbon = 3250,
                 Water = 5988
             )
             food_type.put()
             food_type = FoodType(
                 Name = "chicken",
-                Meat = True,
                 Carbon = 3500,
                 Water = 4325
             )
             food_type.put()
             food_type = FoodType(
                 Name = "vegetables",
-                Meat = False,
                 Carbon = 2000,
                 Water = 322
             )
             food_type.put()
             food_type = FoodType(
                 Name = "fruits",
-                Meat = False,
                 Carbon = 400,
                 Water = 962
             )
             food_type.put()
             food_type = FoodType(
                 Name = "baked",
-                Meat = False,
                 Carbon = 700,
                 Water = 4482
             )
@@ -100,12 +94,6 @@ class LogoutHandler(webapp2.RequestHandler):
 
 
 
-class UserInput(webapp2.RequestHandler):
-    def get(self):
-        content = TEMPLATE.get_template('/templates/UserInput.html')
-        self.response.write(content.render(title = "book variable"))
-        # print "Class is functional"
-
 class NewItemHandler(webapp2.RequestHandler):
     def get(self):
         print ("Getting new item");
@@ -115,14 +103,11 @@ class NewTypeHandler(webapp2.RequestHandler):
         content = TEMPLATE.get_template('/templates/newType.html')
         self.response.write(content.render())
     def post(self):
-        meat = self.request.get('type')
+        content = TEMPLATE.get_template('/templates/newType.html')
+        self.response.write(content.render())
         value = False
-        if meat is "Yes":
-            value=True
-
         food_type = FoodType(
             Name = self.request.get('foodname'),
-            Meat = value,
             Carbon = float(self.request.get('carbon')),
             Water = float(self.request.get('water'))
         )
@@ -137,7 +122,7 @@ class NewTypeHandler(webapp2.RequestHandler):
 
 class FoodType(ndb.Model):
     Name = ndb.StringProperty() #name of food type
-    Meat = ndb.BooleanProperty() #meat or non meat
+    # Meat = ndb.BooleanProperty() #meat or non meat
     Carbon = ndb.FloatProperty() #footprint in g CO2 / kg food
     Water = ndb.FloatProperty() #footprint in L water / kg food
 
