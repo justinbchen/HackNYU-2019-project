@@ -12,8 +12,8 @@ header{
 }
 
 main{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+
 }
