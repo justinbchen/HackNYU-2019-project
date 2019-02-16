@@ -67,9 +67,6 @@ class FoodType(ndb.Model):
 class FoodItem(ndb.Model):
     Name = ndb.StringProperty() #name of food
     Ingredients = ndb.StringProperty(repeated = True) #list of ingredients by food type
-    Name = ndb.StringProperty()
-    Type = ndb.StringProperty()
-    grams = ndb.IntegerProperty()
 
 app = webapp2.WSGIApplication([
   ('/', HomePage),
