@@ -113,6 +113,10 @@ class NewItemHandler(webapp2.RequestHandler):
     def get(self):
         print ("Getting new item");
 
+class NewTypeHandler(webapp2.RequestHandler):
+    def get(self):
+        print ("Getting new type");
+
 
 class FoodType(ndb.Model):
     Name = ndb.StringProperty() #name of food type
@@ -129,5 +133,6 @@ app = webapp2.WSGIApplication([
   ('/login', MainHandler),
   ('/logout', LogoutHandler),
   ('/signIn', LoginHandler),
-  ('/newItem', NewItemHandler)
+  ('/newItem', NewItemHandler),
+  ('/newType', NewTypeHandler)
 ], debug=True)
