@@ -114,7 +114,7 @@ class NewTypeHandler(webapp2.RequestHandler):
     def get(self):
         content = TEMPLATE.get_template('/templates/newType.html')
         self.response.write(content.render())
-    def get(post):
+    def post(self):
         meat = self.request.get('type')
         value = False
         if meat is "True":
@@ -123,8 +123,8 @@ class NewTypeHandler(webapp2.RequestHandler):
         food_type = FoodType(
             Name = self.request.get('foodname'),
             Meat = value,
-            Carbon = self.request.get('carbon'),
-            Water = self.request.get('water')
+            Carbon = float(self.request.get('carbon')),
+            Water = float(self.request.get('water'))
         )
         q = FoodType.query().fetch()
     #
