@@ -33,12 +33,11 @@ class User(ndb.Model):
 	user_library = ndb.StringProperty(repeated = True)
 
 class MainHandler(webapp2.RequestHandler):
-	def get(self):
-		print ("Here")
+    def get(self):
+        print ("Here")
 
-
- 	def post(self):
-		print ("Here")
+    def post(self):
+        print ("Here")
 
 class LoginHandler(webapp2.RequestHandler):
 	def get(self):
@@ -65,6 +64,8 @@ class FoodItem(ndb.Model):
 
     Name = ndb.StringProperty();
     Type = ndb.StringProperty();
+    grams = ndb.IntegerProperty();
+
 
 app = webapp2.WSGIApplication([
   ('/', HomePage),
