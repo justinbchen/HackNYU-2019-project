@@ -59,10 +59,15 @@ class UserInput(webapp2.RequestHandler):
 		# print "Class is functional"
 
 
-class FoodItem(ndb.Model):
+class FoodType(ndb.Model):
+    Name = ndb.StringProperty() #name of food type
+    Meat = ndb.BooleanProperty() #meat or non meat
+	Carbon = nbd.FloatProperty() #footprint in g CO2 / kg food
+	Water = nbd.FloatProperty() #footprint in L water / kg food
 
-    Name = ndb.StringProperty();
-    Type = ndb.StringProperty();
+class FoodItem(ndb.Model):
+    Name = ndb.StringProperty() #name of food
+    Ingredients = nbd.ListProperty(FoodType) #list of ingredients by food type
 
 app = webapp2.WSGIApplication([
   ('/', HomePage),
