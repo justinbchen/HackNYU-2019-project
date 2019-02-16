@@ -19,8 +19,20 @@
             <form class="center" action="index.html" method="post">
                 Food name:<br>
                 <input type="text" name="foodname"><br>
+                <br>
                 Is it meat?:<br>
-                <input type="text" name="lastname">
+                <input type="radio" name="type" value="True"> Yes<br>
+                <input type="radio" name="type" value="False"> No<br>
+                <br>
+                What is the footprint in g CO2 / kg food? (Please search this up, we would be grateful)
+                <input type="number" name="carbon" min="1" max="10000000">
+                <br>
+                What is the footprint in L water / kg food? (Please search this up, again we would be grateful)
+                <input type="number" name="water" min="1" max="10000000">
+                <br>
+                <input type="submit" name="submit">
+
+
             </form>
         </main>
         <footer>
