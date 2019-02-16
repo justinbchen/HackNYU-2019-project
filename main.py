@@ -22,12 +22,10 @@ class HomePage(webapp2.RequestHandler):
         q = FoodType.query().fetch()
 
         run = True
-
         for item in q:
             if item.Name == "beef":
                 run = False
                 break
-
         if run:
             food_type = FoodType(
                 Name = "beef",
