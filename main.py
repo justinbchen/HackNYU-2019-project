@@ -127,7 +127,6 @@ class NewTypeHandler(webapp2.RequestHandler):
             Water = float(self.request.get('water'))
         )
         q = FoodType.query().fetch()
-    #
         put = True
         for item in q:
             if food_type.Name is item.Name:
