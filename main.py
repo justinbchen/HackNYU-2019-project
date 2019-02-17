@@ -93,11 +93,11 @@ class HomePage(webapp2.RequestHandler):
                     <a href = "/newItem"><button type="submit" name="newItem">Add New Food Item</button></a>
                     <a href = "/newType"><button type="submit" name="newType">Add New Food Type</button></a>
                     <form class="" action="/" method="post">
-                        <button type="button" name="button">Clicl here to view types</button>
+                        <button type="button" name="button">Click here to view types</button>
                     </form>
                 </main>
                 <table style = "width =70%" class = "center">
-                
+
         """)
         for item in q:
             self.response.write(content.render(name = item.Name, carbon = item.Carbon, water = item.Water))
